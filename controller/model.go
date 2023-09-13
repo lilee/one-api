@@ -307,6 +307,15 @@ func init() {
 			Parent:     nil,
 		},
 		{
+			Id:         "Embedding-bge-large-zh",
+			Object:     "model",
+			Created:    1677649963,
+			OwnedBy:    "baidu",
+			Permission: permission,
+			Root:       "Embedding-bge-large-zh",
+			Parent:     nil,
+		},
+		{
 			Id:         "PaLM-2",
 			Object:     "model",
 			Created:    1677649963,

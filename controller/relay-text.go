@@ -5,13 +5,14 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/gin-gonic/gin"
 	"io"
 	"net/http"
 	"one-api/common"
 	"one-api/model"
 	"strings"
 	"time"
+
+	"github.com/gin-gonic/gin"
 )
 
 const (
@@ -150,6 +151,8 @@ func relayTextHelper(c *gin.Context, relayMode int) *OpenAIErrorWithStatusCode {
 			fullRequestURL = "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/bloomz_7b1"
 		case "Embedding-V1":
 			fullRequestURL = "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/embeddings/embedding-v1"
+		case "Embedding-bge-large-zh":
+			fullRequestURL = "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/embeddings/bge_large_zh"
 		}
 		apiKey := c.Request.Header.Get("Authorization")
 		apiKey = strings.TrimPrefix(apiKey, "Bearer ")
